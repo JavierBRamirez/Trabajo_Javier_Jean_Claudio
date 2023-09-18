@@ -77,6 +77,11 @@ public class Principal extends javax.swing.JFrame {
         mnuCategorias.add(mnuFerreteria);
 
         mnuJugueteria.setText("Juguetería");
+        mnuJugueteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuJugueteriaActionPerformed(evt);
+            }
+        });
         mnuCategorias.add(mnuJugueteria);
 
         jMenuBar1.add(mnuCategorias);
@@ -121,6 +126,18 @@ public class Principal extends javax.swing.JFrame {
         
         formularioInterno.show();
     }//GEN-LAST:event_mnuAlimentosActionPerformed
+
+    private void mnuJugueteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuJugueteriaActionPerformed
+          frmJuguetes formularioInt = new frmJuguetes();
+        mdiPrincipal.add(formularioInt);
+        Dimension containerSize = mdiPrincipal.getSize();
+        Dimension formSize = formularioInt.getSize();
+        
+        formularioInt.setLocation(((int)containerSize.getWidth() - (int)formSize.getWidth())/2,
+        ((int)containerSize.getHeight()-(int)formSize.getHeight())/2);
+        
+        formularioInt.show();
+    }//GEN-LAST:event_mnuJugueteriaActionPerformed
 
     /**
      * @param args the command line arguments

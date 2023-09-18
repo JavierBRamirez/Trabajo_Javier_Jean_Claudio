@@ -4,6 +4,7 @@
  */
 package PaqueteA;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -62,6 +63,11 @@ public class Principal extends javax.swing.JFrame {
         mnuCategorias.setText("Categorias");
 
         mnuAlimentos.setText("Alimentos");
+        mnuAlimentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuAlimentosActionPerformed(evt);
+            }
+        });
         mnuCategorias.add(mnuAlimentos);
 
         mnuBelleza.setText("Belleza");
@@ -102,6 +108,19 @@ public class Principal extends javax.swing.JFrame {
     private void mnuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSalirMouseClicked
         this.dispose();
     }//GEN-LAST:event_mnuSalirMouseClicked
+
+    private void mnuAlimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAlimentosActionPerformed
+        // TODO add your handling code here:
+        FrmAlimentos formularioInterno = new FrmAlimentos();
+        mdiPrincipal.add(formularioInterno);
+        Dimension containerSize = mdiPrincipal.getSize();
+        Dimension formSize = formularioInterno.getSize();
+        
+        formularioInterno.setLocation(((int)containerSize.getWidth() - (int)formSize.getWidth())/2,
+        ((int)containerSize.getHeight()-(int)formSize.getHeight())/2);
+        
+        formularioInterno.show();
+    }//GEN-LAST:event_mnuAlimentosActionPerformed
 
     /**
      * @param args the command line arguments
